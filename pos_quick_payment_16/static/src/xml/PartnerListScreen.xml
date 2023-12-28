@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates id="template" xml:space="preserve">
+    <t
+        t-name="PartnerListScreenEdit"
+        t-inherit="point_of_sale.PartnerListScreen"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//th[hasclass('partner-line-email')]" position="after">
+            <th t-if="!env.isMobile">Credit ?</th>
+            <th t-if="!env.isMobile">Solde</th>
+        </xpath>
+        <!--<xpath expr="//th[hasclass('partner-line-details')]" position="after">
+            <th class="partner-line-details"></th>
+        </xpath>-->
+    </t>
+     <t
+        t-name="PartnerLineEdit"
+        t-inherit="point_of_sale.PartnerLine"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//td[hasclass('partner-line-email')]" position="after">
+            <td t-if="!env.isMobile">
+                <t t-if="props.partner.allow_credit">
+                    <i class="fa fa-check" style="font-size: 25px;"></i>
+                </t>
+                <t t-else="">
+                    <i class="fa fa-times" style="font-size: 25px;color:red;"></i>
+                </t>
+            </td>
+            <td>
+                <t t-esc="state.partnerCredit"/> DA
+            </td>
+        </xpath>
+         <xpath expr="//button[hasclass('edit-partner-button')]" position="after">
+             <button class="payment-partner-button"
+                     t-on-click.stop="() => this.trigger('click-partner-payment', props.partner)">Payment</button>
+         </xpath>
+    </t>
+</templates>

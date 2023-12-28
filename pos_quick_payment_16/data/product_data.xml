@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_partner_credit" model="product.product">
+            <field name="name">Partner credit</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="point_of_sale.product_category_pos"/>
+            <field name="sale_ok" eval="True"/>
+        </record>
+    </data>
+</odoo>

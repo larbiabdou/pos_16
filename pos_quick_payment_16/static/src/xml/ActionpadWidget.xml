@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates id="template" xml:space="preserve">
+    <t
+        t-name="ProductScreenEdit"
+        t-inherit="point_of_sale.ProductScreen"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//div[hasclass('subpads')]" position="after">
+            <button class="button pay-quick validation" t-on-click="() => this.trigger('click-quick-pay')">
+                <div class="pay-circle">
+                    <i class="fa fa-chevron-right" role="img" aria-label="Pay" title="Pay" />
+                </div>
+                Quick Payment
+            </button>
+            <button class="button pay-quick validation" t-on-click="() => this.trigger('click-credit-pay')">
+                <div class="pay-circle">
+                    <i class="fa fa-chevron-right" role="img" aria-label="Pay" title="Pay" />
+                </div>
+                Credit
+            </button>
+        </xpath>
+    </t>
+
+</templates>

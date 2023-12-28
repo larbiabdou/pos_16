@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="pos_account_move_form" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_right_group']/field[@name='currency_id']" position="after">
+                <field name="commande"/>
+                <field name="is_pos_credit" readonly="1"/>
+                <field name="pos_order_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

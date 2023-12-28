@@ -1,0 +1,22 @@
+.pos .payment-partner-button:hover {
+    background: $gray-200;
+}
+.pos .payment-partner-button {
+    margin-top: 6px;
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.pos .popup.popup-success,
+.pos .popup.popup-success .button {
+    background-color: #C6F3BB;
+    color: rgb(49, 88, 34);
+}
+.pos .popup.popup-success {
+    box-shadow: 0px 10px 20px rgba(92,51,51,0.4);
+}
+.pos .popup.popup-success .title {
+    color: white;
+    background: rgba(27, 130, 175, 0.5);
+}
